@@ -1,0 +1,49 @@
+Ítens;Relevância;Bloco;Motivo Original;Motivo Simplificado;Categoria Estratégica;Score;Obs:
+1;LEVE;Processo;Cliente ansioso acionando processo dentro do prazo;Ansiedade por falha de expectativa;Sintoma de Falha na Jornada;2;
+2;LEVE;Processo;Cliente digitou nota fora do padrão;Erro de digitação na pesquisa;Qualidade do Dado / Análise Interna;2;
+3;LEVE;Processo;Cliente encerra chamada sem motivo aparente;Encerramento repentino;Comportamento do Cliente;2;
+4;LEVE;Processo;Não recebimento do e-mail automático;Falta de comunicação automatizada;Comunicação e Tecnologia;NULL;Item sinalizado sem penalização de score, devido à não competência direta do operador. Seguiremos acompanhando e detalhando as oportunidades.
+5;LEVE;Processo;Cliente faz muitas perguntas / Cliente com muitas dúvidas;Alto volume de dúvidas;Sintoma de Falha na Jornada;2;
+6;LEVE;Processo;Insatisfação com direcionamento entre canais;Direcionamento ineficiente;Jornada Omnichannel;2;
+7;CRÍTICA;Processo;Falta de postura do lojista;Postura inadequada do parceiro;Relacionamento com Parceiros;NULL;Item sinalizado sem penalização de score, devido à não competência direta do operador. Seguiremos acompanhando e detalhando as oportunidades.
+8;MODERADA;Processo;Insatisfação com processo de cancelamento;Dificuldade no cancelamento;Processo Operacional;2;
+9;MODERADA;Processo;Protocolo aberto e não tratado;Falta de tratativa;Processo Operacional;3;
+10;MODERADA;Processo;Não identificado motivo da insatisfação;Motivo da insatisfação não esclarecido;Qualidade do Dado / Análise Interna;2;
+11;MODERADA;Processo;Insatisfação com venda indevida/casada;Venda indevida;Comercial / Ética na Venda;2;
+12;CRÍTICA;Processo;Dificuldade no contato com a central;Atendimento não acessível;Comunicação e Acessibilidade;NULL;Item sinalizado sem penalização de score, devido à não competência direta do operador. Seguiremos acompanhando e detalhando as oportunidades.
+13;MODERADA;Processo;Não recebimento do Token;Falha no envio de token;Comunicação e Tecnologia;NULL;
+14;MODERADA;Processo;Operador Sem Alçada para atender;Atendimento limitado por alçada;Eficiência Operacional;NULL;
+15;MODERADA;Processo;Insatisfação com processo de entrega;Entrega com problema;Logística e Transporte;2;
+16;MODERADA;Processo;Atraso no pagamento do estorno já aprovado;Atraso no estorno;Pagamento e Reembolso;2;
+17;MODERADA;Processo;Dificuldade no pagamento do boleto vencido;Boleto vencido;Pagamento e Reembolso;2;
+18;MODERADA;Processo;Insatisfação com cobrança indevida;Cobrança indevida;Pagamento e Reembolso;2;
+19;MODERADA;Processo;Insatisfação com produto;Produto com defeito ou não conforme;Pós-venda / Qualidade;2;
+20;MODERADA;Conhecimento;Dificuldade no uso dos sistemas;A informação existe e está correta, mas o operador falha em encontrá-la ou aplicá-la, seja por dificuldade em manusear os sistemas ou falta de treinamento.;Performance & Conhecimento;3;
+21;MODERADA;Conhecimento;Dificuldade em entender a necessidade;Refere-se à falha do analista em demonstrar escuta ativa e compreender corretamente a real necessidade do cliente. Ocorre quando o atendente não entende o que foi solicitado, age com base em uma interpretação equivocada do problema ou pede para o cliente repetir informações que já foram ditas;Comunicação;5;
+22;CRÍTICA;Conhecimento;Processo está desatualizado no book;Aponta que a informação no Book está ausente, incompleta ou desatualizada, tornando impossível prestar a informação correta.;Gestão do Conhecimento;NULL;Item sinalizado sem penalização de score, devido à não competência direta do operador. Seguiremos acompanhando e detalhando as oportunidades.
+23;MODERADA;Conhecimento;Falha no escalonamento do processo;Falhas do operador que deixa de seguir o passo a passo definido como o script de abertura, o fluxo de escalonamento ou o incentivo à pesquisa no final.;Processo & Qualidade;4;
+24;MODERADA;Conhecimento;Dificuldade em reverter a insatisfação;Focado na inteligência emocional e na capacidade de negociação. É a dificuldade de lidar com um cliente insatisfeito, acalmá-lo e reverter a situação.;Inteligência Emocional;4;
+25;MODERADA;Sistemas;Falhas de comunicação com o cliente;Falhas de conexão e comunicação: Agrupa todos os problemas que impedem ou degradam o canal de contato entre a empresa e o cliente. Se o cliente não consegue falar ou ser ouvido, nada mais acontece.;Infraestrutura e Conectividade;1;
+26;MODERADA;Sistemas;Instabilidade nas plataformas [App, Site ou Portal);Instabilidade nas plataformas do cliente: Cobre qualquer erro, bug ou dificuldade que o cliente enfrenta ao usar as ferramentas da empresa (site, app, portal). É o nosso produto digital falhando na mão do usuário.;Plataformas e Produtos Digitais;1;
+27;MODERADA;Sistemas;Sistemas de atendimento com erros diversos ;Indisponibilidade das ferramentas internas: Reúne todas as falhas, erros e lentidão nos sistemas que o operador utiliza para trabalhar. O cliente consegue contato, mas o atendente fica de mãos atadas.;Sistemas e Ferramentas de Suporte;1;
+29;MODERADA;Experiência;Não orientou o cliente com clareza ;Abrange qualquer falha na comunicação verbal ou escrita do analista para com o cliente. Inclui transmitir informações incorretas/incompletas, falta de clareza na explicação, erros de linguagem (gramática, vícios) ou a incapacidade de construir uma argumentação sólida e compreensível.;Comunicação;3;
+30;MODERADA;Experiência;Não teve escuta ativa ;Escuta ativa e sondagem: Incapacidade de ouvir atentamente a necessidade do cliente e investigar a fundo;Comunicação;5;
+31;MODERADA;Experiência;Não responde todas as perguntas;Solução completa de dúvidas: Deixar o cliente com perguntas sem resposta, gerando um novo contato;Comunicação;4;
+32;MODERADA;Experiência;Não posiciona cliente sobre mute;Gerenciamento de pausas e ausências: Deixar o cliente esperando sem comunicação, gerando incerteza e ansiedade;Comunicação;3;
+33;MODERADA;Experiência;Utiliza emojis indevidos;Linguagem e etiqueta digital: Uso inadequado da linguagem ou de elementos (emojis, gírias) no atendimento por texto;Conduta;3;
+34;MODERADA;Experiência;Não foi ágil durante a ligação / deixou o cliente em linha por muito tempo, sem encerrar devidamente;Agilidade e proatividade: Demonstra lentidão, falta de iniciativa e de senso de urgência para resolver a questão;Eficiência;5;
+35;MODERADA;Experiência;Não usa as ferramentas disponíveis;Domínio de ferramentas e sistemas: Falha em utilizar os recursos para encontrar a solução;Eficiência;3;
+36;MODERADA;Experiência;Não teve empatia;Empatia e acolhimento: Falha em se conectar emocionalmente com o cliente, demonstrando frieza ou indiferença;Personalização;5;
+37;MODERADA;Experiência;Não personalizou o atendimento;Personalização e cordialidade: Atendimento robotizado, sem usar o nome do cliente ou seguir ritos básicos de cortesia;Personalização;4;
+38;MODERADA;Experiência;Não faz pedido de desculpas genuíno;Reconhecimento de falhas: Incapacidade de reconhecer um erro e se desculpar de forma sincera quando necessário;Personalização;4;
+39;MODERADA;Experiência;Não realiza script (Inicio, meio e fim);Aderência a scripts (estrutura): Não seguir o fluxo básico e padronizado do atendimento (início, meio e fim);Processo;5;
+40;MODERADA;Experiência;Utiliza script indevido;Uso correto de scripts (conteúdo): Utilizar um texto padrão que não corresponde à necessidade do cliente;Processo;3;
+41;MODERADA;Experiência;Conversas paralelas / Falta de atenção durante atendimento;Abrange a desconexão do operador com o momento presente do atendimento;Conduta;5;
+42;CRÍTICA;Experiência;Transferiu / desligou indevidamente;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+43;CRÍTICA;Experiência;Transmitiu informações interrompendo a fala do cliente;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+44;CRÍTICA;Experiência;Analista induz ou não argumenta quando o cliente menciona que irá acionar os canais especiais;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+45;PÊNALTI (ERRO FATAL);Experiência;Utiliza termos grosseiros/irônicos / não foi ético com colega ou com o GCB;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+46;PÊNALTI (ERRO FATAL);Experiência;Cometeu erro de informação e/ou procedimento que possa representar algum prejuízo financeiro ao GCB e/ou aos seus clientes;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+47;PÊNALTI (ERRO FATAL);Experiência;Cometeu fraudes de qualquer natureza, com dados pessoais e / ou informações contratuais dos clientes das contratantes;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+48;PÊNALTI (ERRO FATAL);Experiência;Analista expõe desvio de colega/parceiro prejudicando a marca;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;
+48;PÊNALTI (ERRO FATAL);Experiência;Abandono de atendimento;Postura profissional: Comportamentos que demonstram falta de profissionalismo, respeito/ética;Conduta;NCG - Zera a monitoria;

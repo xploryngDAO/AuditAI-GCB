@@ -1,0 +1,8 @@
+{
+  "name": "Remix AuditaQA_v1.0.0.2",
+  "description": "Plataforma SaaS de Auditoria e Monitoria de Qualidade de Atendimento (Auto-QA) com inteligência artificial para BPOs, controle de script, análise de falhas e análise conversacional.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

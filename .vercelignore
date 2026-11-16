@@ -1,0 +1,9 @@
+# Arquivos que não precisam subir para a Vercel.
+.env*
+database_store.json
+.scratch/
+vault/
+coverage/
+*.log
+tests/
+.github/
