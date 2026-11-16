@@ -105,9 +105,7 @@ REM [5/7] Build de producao
 REM --------------------------------------------------------------
 echo.
 echo [5/7] Compilando a aplicacao (build de producao)...
-REM O Vite le NODE_ENV do .env; forcar production aqui evita bundle React de
-REM desenvolvimento (o .env usa development para o 
-pm run dev).
+REM O Vite le NODE_ENV do .env; forcar production evita bundle React de desenvolvimento (o .env usa development para o npm run dev).
 set "NODE_ENV=production"
 call npm run build
 if errorlevel 1 goto :fail

@@ -39,7 +39,7 @@ O `INSTALAR.bat` faz toda a instalação e configuração:
 | Etapa | O que acontece |
 |---|---|
 | 1/7 | Verifica o Node.js 24+ e instala o LTS via `winget` se necessário |
-| 2/7 | Instala as dependências (`npm ci`/`npm install`) |
+| 2/7 | Instala as dependências com `npm ci` (determinístico, respeita o `package-lock`) |
 | 3/7 | Cria o `.env` local com segredos aleatórios e uma porta livre (3000–3010) |
 | 4/7 | Prepara o banco local e as contas iniciais (`database_store.json`) |
 | 5/7 | Compila a aplicação em modo produção (`NODE_ENV=production npm run build`) |
