@@ -56,11 +56,8 @@ REM --------------------------------------------------------------
 :deps
 echo.
 echo [2/7] Instalando dependencias (npm)...
-if exist "node_modules\express\package.json" (
-  call npm install --no-audit --no-fund --prefer-offline
-) else (
-  call npm ci --no-audit --no-fund
-)
+REM npm ci e deterministico (respeita o package-lock e nao o reescreve).
+call npm ci --no-audit --no-fund
 if errorlevel 1 goto :fail
 echo [2/7] Dependencias OK.
 
@@ -108,6 +105,10 @@ REM [5/7] Build de producao
 REM --------------------------------------------------------------
 echo.
 echo [5/7] Compilando a aplicacao (build de producao)...
+REM O Vite le NODE_ENV do .env; forcar production aqui evita bundle React de
+REM desenvolvimento (o .env usa development para o 
+pm run dev).
+set "NODE_ENV=production"
 call npm run build
 if errorlevel 1 goto :fail
 if not exist "dist\server.cjs" goto :fail
@@ -148,7 +149,7 @@ echo.
 set "PORT=%PORT%"
 set "NODE_ENV=production"
 start "" /b node scripts\open-when-ready.mjs
-call npm start
+call npm run start:prod
 echo.
 echo Servidor encerrado.
 goto :success_pause

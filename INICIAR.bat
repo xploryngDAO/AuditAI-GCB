@@ -43,9 +43,8 @@ echo  Para encerrar pressione Ctrl+C nesta janela.
 echo ==============================================================
 echo.
 
-set "NODE_ENV=production"
 start "" /b node scripts\open-when-ready.mjs
-call npm start
+call npm run start:prod
 echo.
 echo Servidor encerrado.
 pause

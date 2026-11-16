@@ -42,7 +42,7 @@ O `INSTALAR.bat` faz toda a instalação e configuração:
 | 2/7 | Instala as dependências (`npm ci`/`npm install`) |
 | 3/7 | Cria o `.env` local com segredos aleatórios e uma porta livre (3000–3010) |
 | 4/7 | Prepara o banco local e as contas iniciais (`database_store.json`) |
-| 5/7 | Compila a aplicação (`npm run build`) |
+| 5/7 | Compila a aplicação em modo produção (`NODE_ENV=production npm run build`) |
 | 6/7 | Confere se a porta está livre |
 | 7/7 | Sobe o servidor em modo produção e abre o navegador |
 
@@ -99,8 +99,9 @@ plataforma expõe funciona em modo local.
 
 ```bash
 npm run dev              # desenvolvimento (API + Vite com HMR) em http://localhost:3000
-npm start                # servidor compilado (produção local)
-npm run build            # cliente Vite + bundle do servidor em dist/server.cjs
+npm run build            # cliente Vite + bundle do servidor em dist/server.cjs (modo produção)
+npm run start:prod       # servidor compilado em modo produção (usado por INSTALAR/INICIAR)
+npm start                # executa dist/server.cjs; exige NODE_ENV=production no ambiente
 npm run typecheck        # tsc --noEmit
 npm test                 # testes unitários (node:test)
 npm run seed:local       # garante master, tenant e usuário principal no banco local
@@ -108,12 +109,19 @@ npm run seed:local:check # valida o seed sem gravar (exit 1 se algo divergir)
 npm run local:reset      # apaga o banco local e recria o seed (destrutivo)
 ```
 
+> `npm run build` e `npm start` seguem o `NODE_ENV` do ambiente. Os `.bat` usam
+> `npm run start:prod`, que força `NODE_ENV=production` mesmo com o `.env` local em
+> `development` (valor necessário para o `npm run dev` subir o Vite).
+
 ## 6. O que mudou em relação à produção
 
 - **Landing page removida**: `src/components/LandingPage.tsx` foi excluída e
   `src/App.tsx`/`LoginScreen` passam direto para o login. Não há rota, estado ou
   botão "voltar para o início".
 - **Banco local**: o fluxo padrão não depende de `DATABASE_URL`, Neon ou Vercel.
+- **Build em modo produção**: o `INSTALAR.bat` força `NODE_ENV=production` no build;
+  o `.env` mantém `development` para o `npm run dev`. O `npm run start:prod` garante
+  a execução do bundle compilado em modo produção.
 - **Instalador Windows**: `INSTALAR.bat` (instalação/configuração completa) e
   `INICIAR.bat` (rotina diária).
 - **Seed específico do GCB**: master `marcel.andre@viavarejo.com.br`, tenant
@@ -134,6 +142,7 @@ server/                   # persistencia (platform_state, tenants, espelhos)
 src/                      # React + Tailwind (telas da plataforma)
 scripts/seed-local.mjs    # seed idempotente do banco local (GCB)
 scripts/open-when-ready.mjs # abre o navegador quando /api/health responde
+scripts/start-production.mjs # sobe dist/server.cjs com NODE_ENV=production
 tests/                    # testes unitarios (node:test)
 db/                       # schema/migracoes relacionais (Estagio 3, opcional)
 docs/                     # documentacao de seguranca e migracao
@@ -172,6 +181,8 @@ Invoke-RestMethod http://localhost:3000/api/tenants -WebSession $s
 | Banco local corrompido/perdido | `npm run local:reset` recria o seed; o backup é o próprio `database_store.json` |
 | Quero começar do zero | Feche o servidor, apague `database_store.json` e rode `INSTALAR.bat` (ou `npm run seed:local`) |
 | Erro no build | Rode `npm run typecheck` e `npm test`; apague `dist/` e rode `npm run build` novamente |
+| Bundle grande (~2 MB) com React DevTools | O build rodou em modo desenvolvimento. Defina `NODE_ENV=production` no terminal antes de `npm run build` (os `.bat` já fazem isso) |
+| `npm start` cai no Vite de desenvolvimento | Use `npm run start:prod`, que força `NODE_ENV=production` (é o caminho usado por INSTALAR/INICIAR) |
 
 ## 10. Isolamento da versão de produção
 
