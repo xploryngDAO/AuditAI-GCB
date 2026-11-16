@@ -1,0 +1,4 @@
+# Garante que os scripts .bat cheguem ao Windows com CRLF (o cmd.exe precisa
+# de CRLF para resolver labels de goto/call de forma confiavel).
+*.bat text eol=crlf
+*.cmd text eol=crlf

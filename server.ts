@@ -86,6 +86,15 @@ function sessionSecret(): string {
   return 'development-only-session-secret-do-not-use-in-production';
 }
 
+// A sessão é `Secure` em produção para nunca trafegar em HTTP. A exceção é a
+// execução local em modo produção (INSTALAR.bat sobe `npm start` em
+// http://localhost): ali o navegador não enviaria o cookie `Secure` de volta.
+function secureSessionCookie(): boolean {
+  if (process.env.NODE_ENV !== 'production') return false;
+  const appUrl = String(process.env.APP_URL || '').trim();
+  return !/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(appUrl);
+}
+
 function encodeSession(user: AuthenticatedUser): string {
   const payload = Buffer.from(JSON.stringify({ ...user, exp: Date.now() + SESSION_TTL_MS })).toString('base64url');
   const signature = crypto.createHmac('sha256', sessionSecret()).update(payload).digest('base64url');
@@ -2586,7 +2595,7 @@ app.post("/api/login", (req, res) => {
       bpoName: user.bpoName,
       tenantId
     };
-    res.setHeader('Set-Cookie', `${SESSION_COOKIE}=${encodeSession(authenticatedUser)}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${Math.floor(SESSION_TTL_MS / 1000)}${process.env.NODE_ENV === 'production' ? '; Secure' : ''}`);
+    res.setHeader('Set-Cookie', `${SESSION_COOKIE}=${encodeSession(authenticatedUser)}; Path=/; HttpOnly; SameSite=Strict; Max-Age=${Math.floor(SESSION_TTL_MS / 1000)}${secureSessionCookie() ? '; Secure' : ''}`);
     return res.json({
       success: true,
       user: {
@@ -2600,7 +2609,7 @@ app.post("/api/login", (req, res) => {
 });
 
 app.post('/api/logout', (_req, res) => {
-  res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0${process.env.NODE_ENV === 'production' ? '; Secure' : ''}`);
+  res.setHeader('Set-Cookie', `${SESSION_COOKIE}=; Path=/; HttpOnly; SameSite=Strict; Max-Age=0${secureSessionCookie() ? '; Secure' : ''}`);
   res.status(204).end();
 });
 

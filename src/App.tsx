@@ -39,7 +39,6 @@ import {
   MessageSquare
 } from 'lucide-react';
 import GeminiConfig from './components/GeminiConfig';
-import LandingPage from './components/LandingPage';
 import LoginScreen from './components/LoginScreen';
 
 export default function App() {
@@ -48,10 +47,7 @@ export default function App() {
   const [selectedTenantForAI, setSelectedTenantForAI] = useState<string>('system-global');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isChatOpen, setIsChatOpen] = useState(false);
-  
-  // Unauthenticated page state
-  const [unauthView, setUnauthView] = useState<'landing' | 'login'>('landing');
-  
+
   // Real full-stack state pulled from Node.js backend
   const [interactions, setInteractions] = useState<Interaction[]>([]);
   const [auditConfig, setAuditConfig] = useState<AuditConfig | null>(null);
@@ -308,7 +304,6 @@ export default function App() {
     setLoginPassword("");
     setLoginError(null);
     setActiveTab('dashboard');
-    setUnauthView('landing');
   };
 
   // Reset database state
@@ -407,10 +402,6 @@ export default function App() {
   }
 
   if (!isAuthenticated) {
-    if (unauthView === 'landing') {
-      return <LandingPage onOpenLogin={() => setUnauthView('login')} />;
-    }
-
     return (
       <LoginScreen
         loginEmail={loginEmail}
@@ -420,7 +411,6 @@ export default function App() {
         loginError={loginError}
         loginSubmitting={loginSubmitting}
         handleLoginSubmit={handleLoginSubmit}
-        onBackToLanding={() => setUnauthView('landing')}
       />
     );
   }

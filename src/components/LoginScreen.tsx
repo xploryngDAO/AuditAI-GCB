@@ -3,7 +3,6 @@ import {
   LogIn, 
   Mail, 
   Key, 
-  ArrowLeft, 
   ShieldCheck, 
   Bot, 
   Activity, 
@@ -23,7 +22,6 @@ interface LoginScreenProps {
   loginError: string | null;
   loginSubmitting: boolean;
   handleLoginSubmit: (e: React.FormEvent) => void;
-  onBackToLanding: () => void;
 }
 
 export default function LoginScreen({
@@ -33,8 +31,7 @@ export default function LoginScreen({
   setLoginPassword,
   loginError,
   loginSubmitting,
-  handleLoginSubmit,
-  onBackToLanding
+  handleLoginSubmit
 }: LoginScreenProps) {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -48,19 +45,7 @@ export default function LoginScreen({
       
       {/* Top Header */}
       <header className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 flex items-center justify-between">
-        <button
-          onClick={onBackToLanding}
-          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200/90 hover:border-slate-300 px-3.5 py-2 rounded-xl transition-all cursor-pointer shadow-2xs hover:shadow-xs"
-          id="btnBackToLanding"
-        >
-          <ArrowLeft className="w-4 h-4 text-indigo-600" />
-          <span>Voltar para o Início</span>
-        </button>
-
-        <div 
-          className="flex items-center gap-2.5 cursor-pointer select-none"
-          onClick={onBackToLanding}
-        >
+        <div className="flex items-center gap-2.5 select-none">
           <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold text-xs shadow-xs">
             <Bot className="w-4 h-4" />
           </div>

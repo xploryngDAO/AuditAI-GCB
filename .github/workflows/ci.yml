@@ -26,6 +26,12 @@ jobs:
       - name: Install
         run: npm ci
 
+      - name: Local seed (database_store.json)
+        run: npm run seed:local
+
+      - name: Validate local seed
+        run: npm run seed:local:check
+
       - name: Typecheck
         run: npm run typecheck
 

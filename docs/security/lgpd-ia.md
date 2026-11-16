@@ -6,6 +6,11 @@
 **Repo:** `C:\AI_Apps\Projetos\Audit.AI`
 **Natureza:** leitura estática de código + execução local e isolada do módulo de mascaramento (sem iniciar servidor, sem build, sem chamar provedor de IA, sem editar `src/`, `server.ts`, testes ou `database_store.json`).
 
+> **Nota de contexto (AuditAI GCB):** relatório histórico produzido sobre o repositório de
+> produção `Audit.AI` (snapshot de 2026-11-12). Neste fork a `LandingPage` foi removida e o
+> app vai direto para o login; as citações a `LandingPage.tsx` abaixo registram o estado
+> auditado na época e não descrevem a UI atual deste repositório.
+
 ---
 
 ## 0. Reprodutibilidade e método
