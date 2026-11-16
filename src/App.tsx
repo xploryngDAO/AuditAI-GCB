@@ -190,10 +190,9 @@ export default function App() {
         } catch (e) {
           localStorage.removeItem('auditaqa_user_session');
         }
-      } else {
-        // Just preload BPOs list for potential registration/reference dropdowns if any
-        await fetchBpos();
       }
+      // Sem sessão: nao chamar endpoints autenticados aqui (gerava 401 no console
+      // antes do login). BPOs/config/interactions sao carregados apos autenticar.
       setLoading(false);
     };
     init();
@@ -285,7 +284,7 @@ export default function App() {
         setLoginError(data.error || "E-mail ou senha incorretos.");
       }
     } catch (err) {
-      setLoginError("Erro ao se conectar ao servidor.");
+      setLoginError("Não foi possível conectar ao servidor local. Verifique se o sistema está em execução (INSTALAR.bat ou INICIAR.bat) e tente novamente.");
     } finally {
       setLoginSubmitting(false);
     }

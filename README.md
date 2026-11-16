@@ -129,6 +129,10 @@ npm run local:reset      # apaga o banco local e recria o seed (destrutivo)
 - **Cookie de sessão local**: em produção o cookie continua `Secure`; na execução
   local em `http://localhost` ele não recebe `Secure` (senão o navegador não o
   enviaria de volta). Ver `secureSessionCookie()` em `server.ts`.
+- **Sem dependência de fontes externas**: o Google Fonts foi removido do CSS; a UI
+  usa a fonte do sistema (Inter/JetBrains Mono quando instaladas) e nada é buscado
+  fora da máquina. Também não há mais chamadas autenticadas antes do login
+  (o antigo `GET /api/bpos` gerava 401 no console da tela de login).
 
 O restante do código, rotas, telas e regras de negócio é o mesmo do AuditaQA.
 
@@ -181,6 +185,8 @@ Invoke-RestMethod http://localhost:3000/api/tenants -WebSession $s
 | Banco local corrompido/perdido | `npm run local:reset` recria o seed; o backup é o próprio `database_store.json` |
 | Quero começar do zero | Feche o servidor, apague `database_store.json` e rode `INSTALAR.bat` (ou `npm run seed:local`) |
 | Erro no build | Rode `npm run typecheck` e `npm test`; apague `dist/` e rode `npm run build` novamente |
+| Login com "Não foi possível conectar ao servidor local" | O servidor não está rodando: abra `INICIAR.bat` e **mantenha a janela aberta** (fechar a janela encerra o servidor) |
+| Console com erros de extensão (MetaMask/`inpage.js`, `MaxListenersExceededWarning`) | Ruído das extensões do navegador, não da aplicação; teste em uma janela anônima sem extensões |
 | Bundle grande (~2 MB) com React DevTools | O build rodou em modo desenvolvimento. Defina `NODE_ENV=production` no terminal antes de `npm run build` (os `.bat` já fazem isso) |
 | `npm start` cai no Vite de desenvolvimento | Use `npm run start:prod`, que força `NODE_ENV=production` (é o caminho usado por INSTALAR/INICIAR) |
 

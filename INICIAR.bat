@@ -39,10 +39,12 @@ if "%PORT_BUSY%"=="1" (
 echo ==============================================================
 echo  AuditAI GCB - iniciando servidor local
 echo  Endereco : http://localhost:%PORT%
-echo  Para encerrar pressione Ctrl+C nesta janela.
+echo  MANTENHA ESTA JANELA ABERTA enquanto usar o sistema.
+echo  Fechar esta janela (ou Ctrl+C) encerra o servidor local.
 echo ==============================================================
 echo.
 
+set "PORT=%PORT%"
 start "" /b node scripts\open-when-ready.mjs
 call npm run start:prod
 echo.

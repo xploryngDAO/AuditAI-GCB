@@ -142,7 +142,8 @@ echo   Tenant   : Grupo Casas Bahia
 echo   Admin    : marcel.andre@casasbahia.com.br / Mudar@123
 echo.
 echo   O navegador abrira automaticamente quando o servidor responder.
-echo   Para encerrar o servidor pressione Ctrl+C nesta janela.
+echo   MANTENHA ESTA JANELA ABERTA enquanto usar o sistema.
+echo   Fechar esta janela (ou Ctrl+C) encerra o servidor local.
 echo.
 set "PORT=%PORT%"
 set "NODE_ENV=production"
